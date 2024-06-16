@@ -31,13 +31,13 @@ jobs:
         run: node assets/convertToken.js
 
       - name: Format with Prettier
-        run: npx prettier --write assets/css/TailwindCSS-preset.js
+        run: npx prettier --write assets/TailwindCSS-preset.js
 
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add assets/css/TailwindCSS-preset.js
+          git add assets/TailwindCSS-preset.js
           git commit -m 'Update TailwindCSS-preset.js from token.json' || exit 0
           git push
         env:
