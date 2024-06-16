@@ -1,4 +1,4 @@
-const fs = require("fs");
+import { readFile, writeFile } from "fs";
 
 const tokenPath = "./TailwindCSS.Mode1.tokens.json";
 const presetPath = "./TailwindCSS-preset.js";
@@ -77,7 +77,7 @@ function convertTokenToPreset(token) {
   };`;
 }
 
-fs.readFile(tokenPath, "utf8", (err, data) => {
+readFile(tokenPath, "utf8", (err, data) => {
   if (err) {
     console.error("Error reading token file:", err);
     return;
@@ -86,7 +86,7 @@ fs.readFile(tokenPath, "utf8", (err, data) => {
   const token = JSON.parse(data);
   const preset = convertTokenToPreset(token);
 
-  fs.writeFile(presetPath, preset, "utf8", (err) => {
+  writeFile(presetPath, preset, "utf8", (err) => {
     if (err) {
       console.error("Error writing preset file:", err);
       return;
