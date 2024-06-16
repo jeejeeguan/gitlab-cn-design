@@ -1,7 +1,7 @@
 const fs = require("fs");
 
-const tokenPath = "~/assets/TailwindCSS.Mode1.tokens.json";
-const presetPath = "~/assets/TailwindCSS-preset.js";
+const tokenPath = "./TailwindCSS.Mode1.tokens.json";
+const presetPath = "./TailwindCSS-preset.js";
 
 function convertTokenToPreset(token) {
   const colors = {};
