@@ -1,6 +1,6 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
-  "vueIndentScriptAndStyle": true,
+  "vueIndentScriptAndStyle": false,
   "printWidth": 120,
   "htmlWhitespaceSensitivity": "ignore"
 }
