@@ -10,5 +10,8 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-  modules: ["@nuxt/eslint", "@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/eslint", "@nuxtjs/tailwindcss", "nuxt-svgo-loader"],
+  svgoLoader: {
+    svgo: false,
+  },
 });
