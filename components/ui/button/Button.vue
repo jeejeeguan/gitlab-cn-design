@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { cva, type VariantProps } from "class-variance-authority";
+import type { HTMLAttributes } from "vue";
+import { Primitive, type PrimitiveProps } from "radix-vue";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-base font-normal leading-normal transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -27,19 +29,21 @@ const buttonVariants = cva(
 
 type ButtonVariants = VariantProps<typeof buttonVariants>;
 
-interface Props {
+interface Props extends PrimitiveProps {
   variant?: ButtonVariants["variant"];
   size?: ButtonVariants["size"];
+  class?: HTMLAttributes["class"];
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   variant: "primary",
   size: "medium",
+  as: "button",
 });
 </script>
 
 <template>
-  <button :class="buttonVariants({ variant, size })">
+  <Primitive :as="as" :as-child="asChild" :class="cn(buttonVariants({ variant, size }), props.class)">
     <slot />
-  </button>
+  </Primitive>
 </template>
