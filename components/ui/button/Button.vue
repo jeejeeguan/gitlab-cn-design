@@ -15,6 +15,7 @@ const buttonVariants = cva(
         outline:
           "bg-white/0 text-gray-950 border border-gray-300 focus-visible:ring-gray-950 sm:hover:bg-gray-100 active:bg-gray-100",
         ghost: "bg-white/0 text-gray-950 focus-visible:ring-gray-950 sm:hover:bg-gray-100 active:bg-gray-100",
+        link: "text-gray-950 sm:hover:underline underline-offset-4 focus-visible:ring-gray-950 active:underline",
       },
       size: {
         medium: "h-10 px-4 py-2",
